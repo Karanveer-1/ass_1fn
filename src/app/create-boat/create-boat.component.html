@@ -1,0 +1,17 @@
+<h3>Create New Boat</h3>
+
+<label>Boat Name</label>
+<input type="text" class="form-control" [(ngModel)]="this.newBoat.boatName"/><br/>
+<label>Length (ft)</label>
+<input required type="text" class="form-control" [(ngModel)]="this.newBoat.lengthInFeet"/><br/>
+<label>Picture</label>
+<input required type="text" class="form-control" [(ngModel)]="this.newBoat.picture"/><br/>
+<label>Make</label>
+<input required type="text" class="form-control" [(ngModel)]="this.newBoat.make"/><br/>
+<label>Description</label>
+<ckeditor required [editor]="editor" [(ngModel)]="this.newBoat.description"></ckeditor><br/>
+
+
+<div class="form-group">
+  <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+</div>

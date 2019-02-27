@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="isLoggedIn()">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/">Home</a>
+        <a class="nav-item nav-link" routerLink="/create-boat"><i class="far fa-plus-square"></i> Add Boat</a>
+        <a class="nav-item nav-link" (click)="logout()">Logout</a>
+    </div>
+</nav>
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="!isLoggedIn()">
+  <div class="navbar-nav"></div>
+</nav>
+<div class="jumbotron">
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
